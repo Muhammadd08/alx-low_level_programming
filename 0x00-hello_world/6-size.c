@@ -2,9 +2,10 @@
 
 /**
  * main - Prints sized of characters
- *Description:  a C program that prints the size of various types
+ * 
+ * Description:  a C program that prints the size of various types
  *
- *Return: Always 0 (success)
+ * Return: Always 0 (success)
  */
 int main(void)
 {
