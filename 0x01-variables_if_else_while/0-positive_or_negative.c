@@ -7,7 +7,7 @@
 *
 * description: print whether the number n is positive or negative.
 *
-* return (0) : always zero
+* Return: Always 0 (Success)
 */
 int main(void)
 {
