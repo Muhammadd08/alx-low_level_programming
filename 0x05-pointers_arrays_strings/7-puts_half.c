@@ -23,8 +23,8 @@ void puts_half(char *str)
 		len2 = len / 2;
 		while (len2 <= len)
 		{
-			_putchar(str[len2]);
 			len2++;
+			_putchar(str[len2]);
 		}
 	}
 	else if (len % 2 != 0)
@@ -32,8 +32,8 @@ void puts_half(char *str)
 		len2 = (len - 1) / 2;
 		while (len2 <= len)
 		{
-			_putchar(str[len2]);
 			len2++;
+			_putchar(str[len2]);
 		}
 	}
 	_putchar('\n');
