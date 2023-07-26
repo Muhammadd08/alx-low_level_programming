@@ -32,7 +32,7 @@ char *_strcat(char *dest, char *src)
 		}
 		i++;
 	}
-	for (j = len1; j <= (len1 + len2); j++)
+	for (j = len1; j < (len1 + len2); j++)
 	{
 		dest[j] = src[k];
 		k++;
