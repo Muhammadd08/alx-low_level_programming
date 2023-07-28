@@ -10,40 +10,14 @@
 *
 * Return: pointer to destination string.
 */
-char* _strncpy(char* dest, char* src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
-	int i;
-	int j;
-	int len;
-	int len2;
+int byteCount;
 
-	j = 0;
-	i = 0;
-	len = 0;
-	len2 = 0;
+for (byteCount = 0; byteCount < n && src[byteCount] != '\0'; byteCount++)
+dest[byteCount] = src[byteCount];
+for (; byteCount < n; byteCount++)
+dest[byteCount] = '\0';
 
-	while (dest[len2] != '\0')
-	{
-		len2++;
-	}
-
-	while ( src[len] != '\0')
-	{
-		len++;
-	}
-	
-	while (dest[i] != '\0' && src[j] != '\0' && j < n)
-	{
-		dest[i] = src[j];
-	}
-	if (n > len)
-	{
-		dest[len] = '\0';
-	}
-	else
-	{
-		dest[len2] = '\0';
-	}
-
-	return (dest);
+return (dest);
 }
