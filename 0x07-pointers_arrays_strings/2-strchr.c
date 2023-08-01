@@ -6,7 +6,7 @@
  *
  * Return: char with result
  */
-char* _strchr(char* s, char c)
+char *_strchr(char *s, char c)
 {
 
 	if (*s == '\0')
