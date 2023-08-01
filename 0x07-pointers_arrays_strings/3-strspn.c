@@ -1,5 +1,12 @@
 #include "main.h"
-
+/**
+ * _strspn - calculates the length of the initial segment of c,
+ * which consists entirely of characters in accept.
+ * @s : This is the main C string to be scanned.
+ * @accept : This is the string containing the list of characters.
+ *
+ * Return: arrayy of char type (s).
+ */
 unsigned int _strspn(char *s, char *accept)
 {
 	int i;
