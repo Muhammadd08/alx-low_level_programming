@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stddef.h>
 /**
 * _strpbrk - function that finds the first character in the string s,
 * that matches any character specified in accept,
@@ -28,5 +27,5 @@ char *_strpbrk(char *s, char *accept)
 			j++;
 		}
 	}
-	return (NULL);
+	return ('\0');
 }
