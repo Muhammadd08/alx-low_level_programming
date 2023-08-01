@@ -2,12 +2,11 @@
 /**
 * _strstr - function finds the first occurrence of the substring,
 * needle in the string haystack.
-* @haystack - This is the main C string to be scanned.
-* @needle - This is the small string to be searched with-in haystack string.
-* 
+* @haystack : This is the main C string to be scanned.
+* @needle : This is the small string to be searched with-in haystack string.
+*
 * Return: arrayy of char type (haystack).
 */
-
 char *_strstr(char *haystack, char *needle)
 {
 	int i;
@@ -40,7 +39,6 @@ char *_strstr(char *haystack, char *needle)
 				}
 			}
 		}
-		
 	}
 	return ('\0');
 }
