@@ -1,10 +1,10 @@
 #include "main.h"
-/*
- * is_prime_number - checks if a number is prime.
- * @n: integer.
+/**
+ * is_prime_number - checks if a number is prime
+ * @n: Number Integer
  *
- * return: (1) if the number is a prime number,
- * (0) otherwise
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
 int is_prime_number(int n)
 {
