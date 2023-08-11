@@ -1,54 +1,42 @@
-#include "main.h"
 #include <stdlib.h>
+#include "main.h"
+
 /**
- * string_nconcat - concatenates two strings.
- * @s1: first string.
- * @s2: second string.
- * @n: integer.
- *
- * Return: pointer shall point to a newly allocated space in memory,
- * which contains s1, followed by the first n bytes of s2,
- * and null terminated.
+ * string_nconcat - fuction that concats two strings but with s2 by n amount.
+ * @s1: base sting to concat to. `Null` will return as empty.
+ * @s2: string to copy from. 'NULL' will return as empty string.
+ * @n: amount of s2 to copy.
+ * Return: pointer to allocated memory.
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int count1 = 0, count2 = 0, i = 0, j = 0;
-	char *ptr;
+	char *str;
+	unsigned int i, a, b;
 
-	if (s1 != NULL)
-		for (; s1[count1]; count1++)
+	a = b = 0;
+	if (s1)
+		for (; s1[a]; a++)
 			;
-	if (s2 != NULL)
-		for (; s2[count2]; count2++)
+	if (s2)
+		for (; s2[b]; b++)
 			;
-	ptr = malloc(sizeof(char) * (count1 + 1));
-	if (ptr == NULL)
+	if (!(n >= b))
+		b = n;
+
+	str = malloc(sizeof(char) * (a + b) + 1);
+	if (!str)
 		return (NULL);
-	while (s1[i] != '\0')
+
+	for (i = 0; i < (a + b); i++)
 	{
-		ptr[i] = s1[i];
-		i++;
+		if (i < a)
+			str[i] = s1[i];
+		else
+			str[i] = s2[i - a];
 	}
-	if (n < count2)
-	{
-		ptr = realloc(ptr, sizeof(char) * (count1 + n + 1));
-		if (ptr == NULL)
-			return (NULL);
-		for (j = 0; j < n; j++, i++)
-		{
-			ptr[i] = s2[j];
-		}
-	}
-	else
-	{
-		ptr = realloc(ptr, sizeof(char) * (count1 + count2 + 1));
-		if (ptr == NULL)
-			return (NULL);
-		for (j = 0; s2[j] != '\0'; j++, i++)
-		{
-			ptr[i] = s2[j];
-		}
-	}
-	ptr[i] = '\0';
-	return (ptr);
+
+	str[i] = '\0';
+
+	return (str);
 }
+
