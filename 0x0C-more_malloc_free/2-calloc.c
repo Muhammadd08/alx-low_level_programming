@@ -1,30 +1,44 @@
-#include "main.h"
+#include "holberton.h"
 #include <stdlib.h>
+
+
 /**
- * _calloc - allocates memory for an array, using malloc.
- * @nmemb: number of objects.
- * @size: size of each object.
+ * _bzero - set all the bytes to 0.
+ * @dst: pointer to propigate.
+ * @size: of the memory per-byte.
  *
- * Return: On success, returns the pointer to the beginning of newly,
- * allocated memory. To avoid a memory leak,
- * the returned pointer must be deallocated with free() or realloc().
- *On failure, returns a null pointer.
+ * Return: pointer to memory area dst.
+ */
+
+void *_bzero(void *dst, unsigned int size)
+{
+	char *d = dst;
+
+	do
+		* d++ = 0;
+	while (--size != 0);
+
+	return (d);
+}
+
+/**
+ * _calloc - create and array using calloc
+ * @nmemb: number elements.
+ * @size: size of the type.
+ *
+ * Return: pointer to the memory.
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *ptr;
-	char *c;
-	unsigned int i;
 
 	if (!nmemb || !size)
 		return (NULL);
-	ptr = malloc(size * nmemb);
+	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);
-	c = ptr;
-	for (i = 0; i <= ((size * nmemb) + 1); i++)
-	{
-		c[i] = 0;
-	}
+
+	_bzero(ptr, nmemb * size);
 	return (ptr);
 }
+
