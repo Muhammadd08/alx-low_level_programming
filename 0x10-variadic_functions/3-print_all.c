@@ -38,8 +38,10 @@ void print_string(char *sep, va_list ps)
 {
 	char *stg = va_arg(ps, char *);
 
-	if (stg == NULL)
+	switch ((int)(!stg))
+	case 1:
 		stg = "(nil)";
+
 	printf("%s%s", sep, stg);
 }
 
@@ -78,16 +80,19 @@ void print_all(const char *const format, ...)
 	while (format && format[i])
 	{
 		j = 0;
-		while (j < 5)
+		if (list != NULL)
 		{
-			if (types[j].z[0] == format[i])
+			while (j < 5)
 			{
-				types[j].pf(separator, list);
-				separator = ", ";
+				if (types[j].z[0] == format[i])
+				{
+					types[j].pf(separator, list);
+					separator = ", ";
+				}
+				j++;
 			}
-			j++;
+			i++;
 		}
-		i++;
 	}
 	va_end(list);
 	printf("\n");
