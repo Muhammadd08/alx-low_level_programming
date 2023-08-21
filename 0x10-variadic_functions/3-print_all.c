@@ -80,19 +80,16 @@ void print_all(const char *const format, ...)
 	while (format && format[i])
 	{
 		j = 0;
-		if (list != NULL)
+		while (j < 5)
 		{
-			while (j < 5)
+			if (types[j].z[0] == format[i])
 			{
-				if (types[j].z[0] == format[i])
-				{
-					types[j].pf(separator, list);
-					separator = ", ";
-				}
-				j++;
+				types[j].pf(separator, list);
+				separator = ", ";
 			}
-			i++;
+			j++;
 		}
+		i++;
 	}
 	va_end(list);
 	printf("\n");
