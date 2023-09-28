@@ -50,7 +50,7 @@ unsigned int binary_to_uint(const char *b)
 	length = _length(b);
 	if (length == -1)
 		return (0);
-	
+
 	while (length >= 0)
 	{
 		if (b[length] == '1')
