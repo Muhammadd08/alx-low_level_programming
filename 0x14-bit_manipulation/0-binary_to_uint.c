@@ -5,7 +5,7 @@
  * @s: pointing to a string of 0 and 1 chars.
  * Return: integer of string.
  */
-int _length(const char* s)
+int _length(const char *s)
 {
 	int i = 0;
 	while (s[i])
