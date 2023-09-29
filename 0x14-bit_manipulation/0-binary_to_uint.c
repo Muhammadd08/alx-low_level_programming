@@ -14,6 +14,7 @@ int _length(const char* s)
 			return (-1);
 		i++;
 	}
+	i--;
 	return (i);
 }
 /**
