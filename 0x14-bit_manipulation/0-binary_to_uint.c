@@ -8,6 +8,7 @@
 int _length(const char *s)
 {
 	int i = 0;
+
 	while (s[i])
 	{
 		if (s[i] != '0' && s[i] != '1')
@@ -25,6 +26,7 @@ int _length(const char *s)
 int powBit(int j)
 {
 	int x = 1;
+
 	while (j)
 	{
 		x *= 2;
