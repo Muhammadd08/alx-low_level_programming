@@ -44,7 +44,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 	unsigned long int *N = n, x = *n;
 	int ch = _check(N, index);
 
-	if (index == 2000)
+	if (index >= (sizeof(unsigned long int) * 4))
 		return (-1);
 	if (!ch)
 	{
