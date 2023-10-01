@@ -45,6 +45,8 @@ int set_bit(unsigned long int *n, unsigned int index)
 	int ch = _check(N, index);
 
 	if (!ch)
+	{
 		*n = x + powBit(index);
-	return (1);
+		return (1);
+	return (-1);
 }
