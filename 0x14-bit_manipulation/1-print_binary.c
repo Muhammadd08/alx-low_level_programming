@@ -5,7 +5,7 @@
  * @n: number we want to calculate it's digit.
  * Return: number of digits.
  */
-int _shifts(unsigned long int n)
+unsigned long int _shifts(unsigned long int n)
 {
 	unsigned long int i;
 
