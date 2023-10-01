@@ -44,12 +44,9 @@ int set_bit(unsigned long int *n, unsigned int index)
 	unsigned long int *N = n, x = *n;
 	int ch = _check(N, index);
 
-	if (index >= (sizeof(unsigned long int) * 4))
+	if (index > 63)
 		return (-1);
 	if (!ch)
-	{
 		*n = x + powBit(index);
-		return (1);
-	}
-	return (-1);
+	return (1);
 }
