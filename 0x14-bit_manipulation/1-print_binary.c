@@ -13,7 +13,8 @@ unsigned long int _shifts(unsigned long int n)
 	{
 		n = n >> 1;
 	}
-	return (i - 1);
+	i--;
+	return (i);
 }
 /**
  * print_binary - calculate number of digits.
