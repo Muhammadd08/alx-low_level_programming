@@ -42,10 +42,10 @@ int main(int argc, char **argv)
 	}
 	c1 = close(fd_r);
 	if (c1 == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", fd_r), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_r), exit(100);
 	c2 = close(fd_w);
 	if (c2 == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", fd_w), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_w), exit(100);
 	return (0);
 }
 
