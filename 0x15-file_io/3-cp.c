@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 			exit(98);
 		}
 		count_w = write(fd_w, buff, count_r);
-		if (count_w == -1)
+		if (count_w < count_r)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to2 %s\n", argv[2]);
 			exit(99);
